@@ -7,19 +7,19 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    int n, k1, k2;
+    long n, k1, k2;
 
     cin>>n>>k1>>k2;
 
     long a[n], tmp, tot = k1+k2;
     list<long> erros;
 
-    for (int i = 0; i < n; i++){
+    for (long i = 0; i < n; i++){
         cin>>tmp;
         a[i] = tmp;
     }
 
-    for (int i = 0; i < n; i++){
+    for (long i = 0; i < n; i++){
         cin>>tmp;
         if(tmp>a[i])
             erros.push_back(tmp - a[i]);
@@ -31,7 +31,6 @@ int main(){
 
     while(tot){
         tmp = erros.back();
-        cout<<tmp<<' ';
         erros.pop_back();
         if(tmp == 0)
             erros.push_back(1);
